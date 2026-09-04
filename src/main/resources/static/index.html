@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service Desk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div>
+            <h1>IT Service Desk</h1>
+            <p>Manage incidents and service requests</p>
+        </div>
+        <button class="primary" id="newTicket">+ New Ticket</button>
+    </header>
+
+    <section class="cards">
+        <div class="card"><span>Total Tickets</span><strong id="total">-</strong></div>
+        <div class="card"><span>Open</span><strong id="open">-</strong></div>
+        <div class="card"><span>In Progress</span><strong id="progress">-</strong></div>
+        <div class="card"><span>Resolved</span><strong id="resolved">-</strong></div>
+        <div class="card"><span>High Priority</span><strong id="high">-</strong></div>
+    </section>
+
+    <section class="filters">
+        <input id="search" placeholder="Search ticket or requester...">
+        <select id="status">
+            <option value="">All Statuses</option>
+            <option value="OPEN">Open</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="RESOLVED">Resolved</option>
+        </select>
+        <select id="priority">
+            <option value="">All Priorities</option>
+            <option value="HIGH">High</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="LOW">Low</option>
+        </select>
+        <select id="category">
+            <option value="">All Categories</option>
+            <option value="NETWORK">Network</option>
+            <option value="HARDWARE">Hardware</option>
+            <option value="ACCESS">Access</option>
+            <option value="SOFTWARE">Software</option>
+            <option value="EMAIL">Email</option>
+        </select>
+        <button id="clear">Clear</button>
+    </section>
+
+    <section class="table-card">
+        <table>
+            <thead>
+            <tr>
+                <th>Ticket</th>
+                <th>Title</th>
+                <th>Requester</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Assigned To</th>
+                <th>Updated</th>
+            </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+        </table>
+
+        <div class="pagination">
+            <span id="info"></span>
+            <div>
+                <button id="prev">← Previous</button>
+                <span id="page"></span>
+                <button id="next">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="error" class="error"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
